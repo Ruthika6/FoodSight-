@@ -1,0 +1,73 @@
+# Configuration for Adaptive Food Demand Forecasting and Waste Risk Estimation System
+
+app:
+  name: "Adaptive Food Demand Forecasting & Waste Risk Intelligence"
+  version: "1.0.0"
+  institution: "Manipal Institute of Technology, Bengaluru"
+  department: "School of Computer Engineering"
+  course: "Machine Learning (CSE_3125) - V Semester Mini Project"
+  authors:
+    - name: "K Sri Praneetha"
+      reg_no: "245805006"
+    - name: "K Ruthika Reddy"
+      reg_no: "245805344"
+  supervisor: "Shreya Banerjee"
+  academic_year: "September 2026"
+
+paths:
+  raw_data_dir: "data/raw"
+  demo_data_dir: "data/demo"
+  processed_data_dir: "data/processed"
+  models_dir: "models"
+  database_path: "data/feedback_history.db"
+
+data:
+  demo_samples_per_center: 300
+  num_centers: 5
+  num_meals: 8
+  random_seed: 42
+  train_test_split_ratio: 0.80
+
+models:
+  random_state: 42
+  linear_regression:
+    fit_intercept: true
+  random_forest:
+    n_estimators: 100
+    max_depth: 12
+    min_samples_split: 5
+    random_state: 42
+    n_jobs: -1
+  xgboost:
+    n_estimators: 120
+    learning_rate: 0.08
+    max_depth: 6
+    subsample: 0.8
+    colsample_bytree: 0.8
+    random_state: 42
+    n_jobs: -1
+
+waste_risk:
+  default_buffer_percentage: 5.0 # 5% extra preparation
+  min_buffer_percentage: 0.0
+  max_buffer_percentage: 25.0
+  thresholds:
+    low_waste_pct: 5.0
+    medium_waste_pct: 15.0
+    shortage_critical_pct: 10.0
+
+retraining:
+  rolling_window_days: 7
+  error_threshold_multiplier: 1.25 # Flag if rolling MAE is 25% higher than test benchmark MAE
+  consecutive_days_trigger: 3
+
+weather:
+  api_timeout_seconds: 5
+  open_meteo_url: "https://api.open-meteo.com/v1/forecast"
+  historical_weather_url: "https://archive-api.open-meteo.com/v1/archive"
+  default_center_coords:
+    10: { city: "Bengaluru", lat: 12.9716, lon: 77.5946, region: "Karnataka" }
+    13: { city: "Manipal", lat: 13.3409, lon: 74.7421, region: "Karnataka" }
+    24: { city: "Mumbai", lat: 19.0760, lon: 72.8777, region: "Maharashtra" }
+    55: { city: "Delhi", lat: 28.6139, lon: 77.2090, region: "Delhi" }
+    86: { city: "Hyderabad", lat: 17.3850, lon: 78.4867, region: "Telangana" }
