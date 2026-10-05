@@ -1,0 +1,6 @@
+center_id,city_code,region_code,center_type,op_area,city
+10,590,56,TYPE_A,3.8,Bengaluru
+13,614,56,TYPE_B,4.5,Manipal
+24,526,85,TYPE_A,5.1,Mumbai
+55,647,34,TYPE_C,2.9,Delhi
+86,562,77,TYPE_B,4.0,Hyderabad

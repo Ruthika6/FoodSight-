@@ -1,0 +1,9 @@
+meal_id,category,cuisine,base_price,base_demand
+1062,Beverages,Italian,180.0,280
+1109,Rice Bowl,Indian,285.0,420
+1207,Pasta,Italian,320.0,190
+1230,Beverages,Continental,150.0,240
+1525,Starters,Thai,240.0,160
+1778,Sandwich,Italian,190.0,310
+1885,Salad,Continental,220.0,175
+1993,Rice Bowl,Indian,310.0,460
