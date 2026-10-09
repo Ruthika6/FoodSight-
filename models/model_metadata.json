@@ -1,0 +1,63 @@
+{
+  "training_timestamp": "2026-10-09T11:56:52.439796",
+  "train_samples": 11400,
+  "test_samples": 2880,
+  "split_cutoff_date": "2024-10-19",
+  "feature_count": 28,
+  "features": [
+    "checkout_price",
+    "base_price",
+    "discount_amount",
+    "discount_ratio",
+    "emailer_for_promotion",
+    "homepage_featured",
+    "promo_interaction",
+    "op_area",
+    "temperature_c",
+    "rainfall_mm",
+    "rain_probability_pct",
+    "is_heavy_rain",
+    "is_extreme_weather",
+    "day_of_week",
+    "is_weekend",
+    "is_holiday",
+    "month",
+    "day_of_month",
+    "demand_lag_1",
+    "demand_lag_7",
+    "demand_rolling_7_mean",
+    "demand_rolling_7_std",
+    "demand_trend_7",
+    "category_encoded",
+    "cuisine_encoded",
+    "center_type_encoded",
+    "weather_condition_encoded",
+    "season_encoded"
+  ],
+  "best_model_name": "XGBoost Regressor",
+  "best_model_mae": 27.23,
+  "best_model_rmse": 39.03,
+  "best_model_r2": 0.9511,
+  "all_metrics": {
+    "Naive Baseline (Last Week Same Day)": {
+      "mae": 91.97,
+      "rmse": 148.2,
+      "r2": 0.2945
+    },
+    "Linear Regression (Ridge)": {
+      "mae": 41.31,
+      "rmse": 63.38,
+      "r2": 0.8709
+    },
+    "Random Forest Regressor": {
+      "mae": 29.57,
+      "rmse": 42.07,
+      "r2": 0.9432
+    },
+    "XGBoost Regressor": {
+      "mae": 27.23,
+      "rmse": 39.03,
+      "r2": 0.9511
+    }
+  }
+}
