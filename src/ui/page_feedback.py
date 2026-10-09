@@ -20,7 +20,7 @@ from src.ui.styles import get_plotly_dark_layout, render_app_header, render_kpi_
 
 def render_feedback_page(df_daily: pd.DataFrame, model_results, metadata) -> None:
     render_app_header(
-        title="Closed-Loop Feedback & Outcome Validation",
+        title="Operations Feedback & Outcome Validation",
         subtitle="Log post-service actuals, calculate prediction errors and physical food waste, and track live rolling accuracy."
     )
 
@@ -146,6 +146,6 @@ def render_feedback_page(df_daily: pd.DataFrame, model_results, metadata) -> Non
         ]
         st.dataframe(display_df, use_container_width=True, hide_index=True)
         csv_data = display_df.to_csv(index=False).encode('utf-8')
-        st.download_button("📥 Export Feedback History CSV", data=csv_data, file_name="closed_loop_feedback_history.csv", mime="text/csv")
+        st.download_button("📥 Export Feedback History CSV", data=csv_data, file_name="operations_feedback_history.csv", mime="text/csv")
     else:
         st.info("No feedback records logged yet.")

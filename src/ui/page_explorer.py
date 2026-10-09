@@ -83,8 +83,7 @@ def render_explorer_page(df_daily: pd.DataFrame, model_results, metadata) -> Non
                 template="plotly_white"
             )
             fig_box.update_layout(
-                **get_plotly_dark_layout(height=340),
-                showlegend=False
+                **get_plotly_dark_layout(height=340, showlegend=False)
             )
             st.plotly_chart(fig_box, use_container_width=True)
 
@@ -107,8 +106,7 @@ def render_explorer_page(df_daily: pd.DataFrame, model_results, metadata) -> Non
             )
             fig_dow.update_traces(texttemplate='%{text:.0f}', textposition='outside')
             fig_dow.update_layout(
-                **get_plotly_dark_layout(height=340),
-                showlegend=False
+                **get_plotly_dark_layout(height=340, showlegend=False)
             )
             st.plotly_chart(fig_dow, use_container_width=True)
 
@@ -120,7 +118,6 @@ def render_explorer_page(df_daily: pd.DataFrame, model_results, metadata) -> Non
             x="rainfall_mm",
             y="num_orders",
             color="weather_condition",
-            trendline="ols",
             labels={"rainfall_mm": "Rainfall (mm)", "num_orders": "Daily Orders", "weather_condition": "Condition"}
         )
         fig_rain.update_layout(

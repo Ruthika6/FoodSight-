@@ -77,8 +77,7 @@ def render_models_page(df_daily: pd.DataFrame, model_results, metadata) -> None:
             marker_color="#F59E0B"
         ))
         fig_bars.update_layout(
-            **get_plotly_dark_layout(height=340),
-            barmode="group"
+            **get_plotly_dark_layout(height=340, barmode="group")
         )
         st.plotly_chart(fig_bars, use_container_width=True)
 

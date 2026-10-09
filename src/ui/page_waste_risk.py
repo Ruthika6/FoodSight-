@@ -80,8 +80,13 @@ def render_waste_risk_page(df_daily: pd.DataFrame, model_results, metadata) -> N
                 marker_color="#10B981" if assessment.waste_risk_level == "LOW" else ("#F59E0B" if assessment.waste_risk_level == "MEDIUM" else "#EF4444")
             ))
             fig_bar.update_layout(
-                **get_plotly_dark_layout(title="Planned Preparation vs Machine Learning Demand Forecast", height=280),
-                barmode="group"
+                **get_plotly_dark_layout(
+                    title="Batch Allocation: Preparation Plan vs ML Forecast",
+                    height=300,
+                    barmode="group",
+                    margin=dict(t=50, b=25, l=20, r=20),
+                    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
+                )
             )
             st.plotly_chart(fig_bar, use_container_width=True)
 
@@ -147,8 +152,8 @@ def render_waste_risk_page(df_daily: pd.DataFrame, model_results, metadata) -> N
         fig_multi.update_layout(
             **get_plotly_dark_layout(
                 title=f"Menu-Wide Preparation Plan vs Predicted Demand (Center {c_choice})",
-                height=340
-            ),
-            barmode="group"
+                height=340,
+                barmode="group"
+            )
         )
         st.plotly_chart(fig_multi, use_container_width=True)

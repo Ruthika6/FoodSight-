@@ -57,8 +57,7 @@ def render_importance_page(df_daily: pd.DataFrame, model_results, metadata) -> N
             color_discrete_sequence=["#3B82F6", "#10B981", "#F59E0B", "#8B5CF6", "#EC4899"]
         )
         fig_donut.update_layout(
-            **get_plotly_dark_layout(height=340),
-            legend=dict(orientation="h", yanchor="bottom", y=-0.15, xanchor="center", x=0.5)
+            **get_plotly_dark_layout(height=340, legend=dict(orientation="h", yanchor="bottom", y=-0.15, xanchor="center", x=0.5))
         )
         st.plotly_chart(fig_donut, use_container_width=True)
 
@@ -74,9 +73,7 @@ def render_importance_page(df_daily: pd.DataFrame, model_results, metadata) -> N
             color_discrete_sequence=["#3B82F6", "#10B981", "#F59E0B", "#8B5CF6", "#EC4899"]
         )
         fig_grp_bar.update_layout(
-            **get_plotly_dark_layout(height=340),
-            showlegend=False,
-            yaxis=dict(autorange="reversed")
+            **get_plotly_dark_layout(height=340, showlegend=False, yaxis=dict(autorange="reversed"))
         )
         st.plotly_chart(fig_grp_bar, use_container_width=True)
 
@@ -115,8 +112,7 @@ def render_importance_page(df_daily: pd.DataFrame, model_results, metadata) -> N
         }
     )
     fig_top.update_layout(
-        **get_plotly_dark_layout(height=450),
-        yaxis=dict(autorange="reversed")
+        **get_plotly_dark_layout(height=450, yaxis=dict(autorange="reversed"))
     )
     st.plotly_chart(fig_top, use_container_width=True)
 
