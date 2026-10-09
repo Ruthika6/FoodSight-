@@ -1,0 +1,33 @@
+{
+  "category": {
+    "Beverages": 0,
+    "Pasta": 1,
+    "Rice Bowl": 2,
+    "Salad": 3,
+    "Sandwich": 4,
+    "Starters": 5
+  },
+  "cuisine": {
+    "Continental": 0,
+    "Indian": 1,
+    "Italian": 2,
+    "Thai": 3
+  },
+  "center_type": {
+    "TYPE_A": 0,
+    "TYPE_B": 1,
+    "TYPE_C": 2
+  },
+  "weather_condition": {
+    "Clear": 0,
+    "Cloudy": 1,
+    "Extreme Heat": 2,
+    "Rainy": 3
+  },
+  "season": {
+    "Autumn": 0,
+    "Monsoon": 1,
+    "Summer": 2,
+    "Winter": 3
+  }
+}
